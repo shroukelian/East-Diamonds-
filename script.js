@@ -1,5 +1,3 @@
-// تأكد من ربط هذا الملف في نهاية الـ HTML قبل إغلاق الـ body
-// <script src="script.js"></script>
         AOS.init({ duration: 1000, once: true });
         
         // Navbar scroll effect
@@ -10,20 +8,16 @@
         });
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. تهيئة مكتبة AOS للأنيميشن
-    // ضبط once: false يجعل الأنيميشن يتكرر في كل مرة تعمل سكرول للأعلى والأسفل
    AOS.init({
-        duration: 500,      // سرعة الأنيميشن (جعلناه أسرع قليلاً من 1000)
+        duration: 500,     
         once: false,        
-        mirror: true,       // يكرر الحركة عند الصعود للأعلى
-        offset: 30,         // تقليل المسافة (كانت 100)، الآن سيظهر العنصر بمجرد دخوله 50 بكسل فقط
-        anchorPlacement: 'top-bottom', // أهم خاصية: يبدأ الأنيميشن بمجرد وصول "أعلى" العنصر إلى "أسفل" الشاشة
-        easing: 'ease-out-back', // حركة انسيابية واحترافية أكثر
-        //  disable: 'mobile', // اختياري: لو المشكلة فضلت موجودة ممكن تقفل الحركات على الموبايل
+        mirror: true,       
+        offset: 30,         
+        anchorPlacement: 'top-bottom', 
+        easing: 'ease-out-back',
 
     });
 
-    // 2. تغيير شكل الهيدر عند التمرير
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -33,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. أنيميشن عداد الأرقام (Stats Counter)
     const stats = document.querySelectorAll('.stat-item h3');
     const speed = 200;
 
@@ -53,8 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 };
                 updateCount();
-                // إذا أردت العداد يشتغل مرة واحدة فقط اترك السطر التالي، إذا أردته يتكرر احذفه
-                // observer.unobserve(target); 
             }
         });
     };
@@ -63,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const statsObserver = new IntersectionObserver(startCounter, { threshold: 1.0 });
     stats.forEach(stat => statsObserver.observe(stat));
 
-    // 4. السكرول الناعم للروابط
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -76,21 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // إضافة كود المنيو للموبايل
 const menuBtn = document.querySelector('.menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
 if(menuBtn) {
     menuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        // تغيير شكل الأيقونة من 3 شرطات إلى X
         const icon = menuBtn.querySelector('i');
         icon.classList.toggle('fa-bars');
         icon.classList.toggle('fa-times');
     });
 }
 });
-// ميزة تكبير الصور في المعرض
 const galleryItems = document.querySelectorAll('.gallery-item');
 const imageViewer = document.getElementById('image-viewer');
 const fullImage = document.getElementById('full-image');
@@ -108,7 +95,6 @@ closeBtn.addEventListener('click', () => {
     imageViewer.style.display = 'none';
 });
 
-// إغلاق النافذة عند الضغط في أي مكان خارج الصورة
 imageViewer.addEventListener('click', (e) => {
     if (e.target !== fullImage) {
         imageViewer.style.display = 'none';

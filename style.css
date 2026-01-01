@@ -1,6 +1,6 @@
 :root {
-    --primary: #FFB300; /* الذهبي من الصورة */
-    --secondary: #1A222D; /* الكحلي الغامق */
+    --primary: #FFB300; 
+    --secondary: #1A222D; 
     --accent: #FFD54F;
     --white: #ffffff;
     --text-dark: #2d3436;
@@ -9,7 +9,7 @@
 }
 html, body {
     max-width: 100%;
-    overflow-x: hidden; /* يمنع الحركة يميناً ويساراً نهائياً */
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -117,7 +117,7 @@ html, body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll; /* أفضل للأداء على الجوال */
+    background-attachment: scroll; 
     color: var(--white);
     padding: 80px 20px;
 }
@@ -128,7 +128,7 @@ html, body {
 }
 
 .hero-title {
-    font-size: clamp(2rem, 8vw, 3.5rem); /* حجم خط يتغير مع حجم الشاشة */
+    font-size: clamp(2rem, 8vw, 3.5rem); 
     line-height: 1.2;
     margin-bottom: 1.5rem;
     font-weight: 900;
@@ -253,14 +253,14 @@ html, body {
 /* --- Location --- */
 .location-sec {
     padding: 100px 0;
-    background-color: #fdfdfd; /* خلفية فاتحة جداً لتمييز القسم */
+    background-color: #fdfdfd; 
 }
 
 .location-flex {
     display: flex;
     align-items: center;
     gap: 60px;
-    flex-wrap: wrap; /* لضمان التجاوب على الموبايل */
+    flex-wrap: wrap;
 }
 
 
@@ -290,7 +290,7 @@ html, body {
     right: 0;
     width: 80%;
     height: 80%;
-    background: var(--primary); /* اللون الأصفر/الذهبي */
+    background: var(--primary); 
     border-radius: 20px;
     z-index: 1;
 }
@@ -302,12 +302,12 @@ html, body {
 }
 .loc-img img {
     width: 100%;
-    height: 450px; /* تحديد ارتفاع ثابت لإعطاء شكل منتظم */
-    object-fit: cover; /* أهم خاصية: تجعل الصورة تملأ المساحة بدون تمطيط */
+    height: 450px; 
+    object-fit: cover; 
     border-radius: 20px;
     position: relative;
-    z-index: 2; /* لتظهر فوق المربع الأصفر */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* ظل احترافي */
+    z-index: 2; 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
     transition: 0.4s ease;
 }
 
@@ -339,13 +339,11 @@ html, body {
     transform: scale(1.1);
 }
 
-/* شريط أصفر سفلي جمالي */
 .accent-bar {
     height: 15px;
     background: var(--primary);
     width: 100%;
 }
-/* المميزات */
 .why-us { padding: 100px 0; background: #fff; }
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
@@ -362,7 +360,6 @@ html, body {
 .feature-box:hover { background: var(--secondary); color: white; transform: translateY(-10px); }
 .feature-box:hover i { color: var(--primary); }
 
-/* آراء العملاء */
 .testimonials {
     background: linear-gradient(rgba(26, 34, 45, 0.9), rgba(26, 34, 45, 0.9)), url('bg-pattern.jpg');
     padding: 100px 0;
@@ -384,7 +381,6 @@ html, body {
 .stars { color: var(--primary); margin-bottom: 10px; font-size: 0.8rem; }
 
 
-/* قسم المعرض */
 .gallery-sec {
     padding: 80px 0;
     background: #fff;
@@ -408,7 +404,7 @@ html, body {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* لضمان عدم تشوه الصورة */
+    object-fit: cover; 
     transition: transform 0.5s ease;
 }
 
@@ -418,7 +414,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 34, 45, 0.7); /* لون كحلي شفاف */
+    background: rgba(26, 34, 45, 0.7); 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -427,7 +423,7 @@ html, body {
 }
 
 .gallery-overlay i {
-    color: var(--primary); /* اللون الذهبي */
+    color: var(--primary); 
     font-size: 2.5rem;
 }
 
@@ -439,7 +435,6 @@ html, body {
     opacity: 1;
 }
 
-/* ستايل نافذة التكبير (Modal) */
 #image-viewer {
     display: none;
     position: fixed;
@@ -470,17 +465,15 @@ html, body {
     cursor: pointer;
 }
 
-/* ضبط للجوال */
 @media (max-width: 768px) {
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr); /* صورتين بجانب بعض في الجوال */
+        grid-template-columns: repeat(2, 1fr); 
         gap: 10px;
     }
     .gallery-item {
         height: 180px;
     }
 }
-/* 6. ميديا كويري خاصة للجوالات الصغيرة جداً */
 @media (max-width: 480px) {
     .hero-btns {
         flex-direction: column;
@@ -497,24 +490,22 @@ html, body {
     }
 }
 
-/* 7. منع تأثيرات AOS من كسر الشاشة */
 [data-aos] {
     pointer-events: none;
 }
 .aos-animate {
     pointer-events: auto;
 }
-/* حل مشكلة الحركات اللي بتيجي من الجنب وتسبب مساحة بيضاء */
 body.aos-all-hidden {
     overflow-x: hidden !important;
 }
 /* footer */
 footer {
-    background: #121921; /* لون كحلي أغمق قليلاً ليعطي فخامة */
+    background: #121921; 
     color: var(--white);
     padding: 80px 0 0;
     position: relative;
-    border-top: 4px solid var(--primary); /* خط ذهبي رفيع بالأعلى */
+    border-top: 4px solid var(--primary); 
 }
 
 .footer-grid {
@@ -524,16 +515,14 @@ footer {
     padding-bottom: 50px;
 }
 
-/* ضبط اللوجو داخل الفوتر */
 .footer-logo {
     margin-bottom: 20px;
 }
 
 .footer-logo img {
-    max-width: 180px; /* تصغير اللوجو لحجم متناسق */
+    max-width: 180px;
     height: auto;
     filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
-    /* إذا كان اللوجو بخلفية سوداء، حاول استبداله بلوجو شفاف PNG */
 }
 
 .footer-tagline {
@@ -543,7 +532,6 @@ footer {
     max-width: 300px;
 }
 
-/* تنسيق العناوين والروابط */
 footer h3 {
     color: var(--primary);
     font-size: 1.4rem;
@@ -589,9 +577,8 @@ footer a:hover {
     padding-right: 5px;
 }
 
-/* شريط الحقوق السفلي */
 .bottom-bar {
-    background: #0a0f14; /* لون أسود تقريباً */
+    background: #0a0f14; 
     padding: 20px 0;
     text-align: center;
     border-top: 1px solid rgba(255,255,255,0.05);
@@ -642,17 +629,16 @@ footer a:hover {
         box-shadow: 10px 10px 0 var(--primary);
     }
 }
-/* --- تنسيق الفوتر للموبايل --- */
 @media (max-width: 768px) {
     footer {
-        text-align: center; /* توسيط كل النصوص */
+        text-align: center; 
         padding: 40px 0 20px;
     }
 
     .footer-grid {
         display: flex;
-        flex-direction: column; /* تحويل الشبكة إلى عمود واحد */
-        align-items: center;    /* توسيط العناصر أفقياً */
+        flex-direction: column; 
+        align-items: center;   
         gap: 40px;
     }
 
@@ -662,10 +648,9 @@ footer a:hover {
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center; /* توسيط المحتوى الداخلي */
+        align-items: center;
     }
 
-    /* توسيط اللوجو */
     .footer-logo {
         display: flex;
         justify-content: center;
@@ -676,14 +661,13 @@ footer a:hover {
         margin: 0 auto;
     }
 
-    /* توسيط الروابط والقوائم */
     .footer-links ul, 
     .footer-contact ul {
         padding: 0;
         list-style: none;
         display: flex;
         flex-direction: column;
-        align-items: center; /* لجعل النصوص والأيقونات في المنتصف تماماً */
+        align-items: center; 
     }
 
     .footer-links li, 
@@ -692,24 +676,21 @@ footer a:hover {
         text-align: center;
     }
 
-    /* ضبط اتجاه الأيقونات مع النص عند التوسيط */
     .footer-contact li i {
-        margin-left: 8px; /* إضافة مسافة بسيطة بين الأيقونة والنص */
+        margin-left: 8px;
         margin-right: 0;
     }
 
-    /* ضبط شريط الحقوق السفلي */
     .bottom-bar {
         padding: 20px 10px;
         font-size: 0.85rem;
     }
 }
-/* تنسيق زر الواتساب (سيكون في الأسفل) */
 .whatsapp-float {
     position: fixed;
-    bottom: 20px; /* مسافة بسيطة من الأسفل */
-    left: 20px;   /* جهة اليسار */
-    right: auto;  /* للتأكد أنه ليس جهة اليمين */
+    bottom: 20px; 
+    left: 20px;  
+    right: auto;  
     background-color: #25d366;
     color: #fff;
     width: 60px;
@@ -725,13 +706,12 @@ footer a:hover {
     animation: pulse-green 2s infinite;
 }
 
-/* تنسيق زر الاتصال (سيكون فوق الواتساب مباشرة) */
 .call-float {
     position: fixed;
-    bottom: 95px; /* المسافة السفلية للواتساب (20) + طول الزر (60) + مسافة بينهم (15) = 95 */
-    left: 20px;   /* نفس جهة الواتساب */
+    bottom: 95px; 
+    left: 20px;   
     right: auto;
-    background-color: #FFB300; /* اللون الذهبي */
+    background-color: #FFB300; 
     color: #1A222D;
     width: 60px;
     height: 60px;
@@ -747,21 +727,19 @@ footer a:hover {
     text-decoration: none;
 }
 
-/* إخفاء نصوص التلميح على الموبايل لتقليل الزحمة (اختياري) */
 @media (max-width: 768px) {
     .whatsapp-float, .call-float {
         width: 55px;
         height: 55px;
     }
     .call-float {
-        bottom: 85px; /* تعديل المسافة للموبايل */
+        bottom: 85px; 
     }
     .tooltip-text {
         display: none !important;
     }
 }
 
-/* الأنميشن (Pulse) لضمان بقائها كما هي */
 @keyframes pulse-green {
     0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
     70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
@@ -773,7 +751,6 @@ footer a:hover {
     70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 179, 0, 0); }
     100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
 }
-/* --- الأنميشن الرئيسي للنبض المستمر --- */
 @keyframes continuous-pulse {
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.4); }
     50% { transform: scale(1.05); box-shadow: 0 0 15px 5px rgba(255, 179, 0, 0.2); }
@@ -786,7 +763,6 @@ footer a:hover {
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
-/* --- تطبيق النبض على بطاقات التميز في الهيرو --- */
 .hero-features {
     display: flex;
     justify-content: center;
@@ -796,7 +772,7 @@ footer a:hover {
 }
 
 .h-feature {
-    background: rgba(26, 34, 45, 0.8); /* خلفية داكنة لتباين أفضل */
+    background: rgba(26, 34, 45, 0.8); 
     border: 1px solid var(--primary);
     padding: 10px 18px;
     border-radius: 50px;
@@ -806,11 +782,10 @@ footer a:hover {
     color: var(--primary);
     font-weight: 700;
     font-size: 0.9rem;
-    animation: continuous-pulse 2.5s infinite ease-in-out; /* نبض مستمر */
+    animation: continuous-pulse 2.5s infinite ease-in-out;
     white-space: nowrap;
 }
 
-/* --- تطبيق النبض المستمر على الأزرار العائمة --- */
 .whatsapp-float {
     animation: pulse-green-constant 2s infinite ease-in-out !important;
 }
@@ -819,22 +794,20 @@ footer a:hover {
     animation: continuous-pulse 2s infinite ease-in-out !important;
 }
 
-/* --- ضبط البطاقات على الموبايل (الفون) لتبدو منظمة --- */
 @media (max-width: 768px) {
     .hero-features {
-        flex-direction: column; /* ترتيب تحت بعض لسهولة القراءة */
+        flex-direction: column; 
         align-items: center;
         gap: 10px;
     }
 
     .h-feature {
-        width: 95%; /* عرض مناسب ليظهر بشكل احترافي */
+        width: 95%; 
         justify-content: center;
         padding: 12px;
         font-size: 0.85rem;
     }
 
-    /* لو عايزهم اتنين فوق وواحد تحت بشكل أشيك */
     .hero-features {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -843,12 +816,12 @@ footer a:hover {
     
     .h-feature:nth-child(1), .h-feature:nth-child(2) {
         grid-column: span 1;
-        font-size: 0.75rem; /* تصغير الخط قليلاً ليناسب الصف */
+        font-size: 0.75rem; 
         padding: 8px;
     }
     
     .h-feature:nth-child(3) {
-        grid-column: span 2; /* الثالثة تأخذ العرض كاملاً */
+        grid-column: span 2;
         width: 100%;
     }
 }
