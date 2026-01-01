@@ -704,3 +704,151 @@ footer a:hover {
         font-size: 0.85rem;
     }
 }
+/* تنسيق زر الواتساب (سيكون في الأسفل) */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* مسافة بسيطة من الأسفل */
+    left: 20px;   /* جهة اليسار */
+    right: auto;  /* للتأكد أنه ليس جهة اليمين */
+    background-color: #25d366;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 10000;
+    transition: 0.3s;
+    animation: pulse-green 2s infinite;
+}
+
+/* تنسيق زر الاتصال (سيكون فوق الواتساب مباشرة) */
+.call-float {
+    position: fixed;
+    bottom: 95px; /* المسافة السفلية للواتساب (20) + طول الزر (60) + مسافة بينهم (15) = 95 */
+    left: 20px;   /* نفس جهة الواتساب */
+    right: auto;
+    background-color: #FFB300; /* اللون الذهبي */
+    color: #1A222D;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    z-index: 10000;
+    transition: 0.3s;
+    animation: pulse-gold 2s infinite;
+    text-decoration: none;
+}
+
+/* إخفاء نصوص التلميح على الموبايل لتقليل الزحمة (اختياري) */
+@media (max-width: 768px) {
+    .whatsapp-float, .call-float {
+        width: 55px;
+        height: 55px;
+    }
+    .call-float {
+        bottom: 85px; /* تعديل المسافة للموبايل */
+    }
+    .tooltip-text {
+        display: none !important;
+    }
+}
+
+/* الأنميشن (Pulse) لضمان بقائها كما هي */
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@keyframes pulse-gold {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(255, 179, 0, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
+}
+/* --- الأنميشن الرئيسي للنبض المستمر --- */
+@keyframes continuous-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 179, 0, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 0 15px 5px rgba(255, 179, 0, 0.2); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
+}
+
+@keyframes pulse-green-constant {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px 10px rgba(37, 211, 102, 0.2); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* --- تطبيق النبض على بطاقات التميز في الهيرو --- */
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.h-feature {
+    background: rgba(26, 34, 45, 0.8); /* خلفية داكنة لتباين أفضل */
+    border: 1px solid var(--primary);
+    padding: 10px 18px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    animation: continuous-pulse 2.5s infinite ease-in-out; /* نبض مستمر */
+    white-space: nowrap;
+}
+
+/* --- تطبيق النبض المستمر على الأزرار العائمة --- */
+.whatsapp-float {
+    animation: pulse-green-constant 2s infinite ease-in-out !important;
+}
+
+.call-float {
+    animation: continuous-pulse 2s infinite ease-in-out !important;
+}
+
+/* --- ضبط البطاقات على الموبايل (الفون) لتبدو منظمة --- */
+@media (max-width: 768px) {
+    .hero-features {
+        flex-direction: column; /* ترتيب تحت بعض لسهولة القراءة */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .h-feature {
+        width: 95%; /* عرض مناسب ليظهر بشكل احترافي */
+        justify-content: center;
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    /* لو عايزهم اتنين فوق وواحد تحت بشكل أشيك */
+    .hero-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 10px;
+    }
+    
+    .h-feature:nth-child(1), .h-feature:nth-child(2) {
+        grid-column: span 1;
+        font-size: 0.75rem; /* تصغير الخط قليلاً ليناسب الصف */
+        padding: 8px;
+    }
+    
+    .h-feature:nth-child(3) {
+        grid-column: span 2; /* الثالثة تأخذ العرض كاملاً */
+        width: 100%;
+    }
+}
