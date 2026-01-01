@@ -34,11 +34,11 @@
 
     <!-- Hero Section -->
    <header id="home" class="hero">
-    <div class="hero-overlay"></div>
+    <!-- حذفنا الـ overlay المنفصل لأننا دمجناه في الـ CSS -->
     <div class="container hero-content" data-aos="zoom-out">
         <h1 class="hero-title">
             كل ما يحتاجه البيت <br>
-            <span class="highlight animate__animated animate__pulse animate__infinite">لدينا</span>
+            <span class="highlight">لدينا</span>
         </h1>
         <p class="hero-subtitle">
             المتخصصون الأوائل في صيانة (الثلاجات - الغسالات - المكيفات - الأفران) بخميس مشيط.
@@ -51,7 +51,6 @@
         </div>
     </div>
 </header>
-
     <!-- Stats Section (Optional but Professional) -->
     <section class="stats">
         <div class="container stats-grid">
@@ -154,6 +153,85 @@
     </div>
 </section>
 
+<!-- قسم معرض الصور -->
+<section id="gallery" class="gallery-sec">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-down">معرض أعمالنا</h2>
+        <p class="section-subtitle" style="text-align: center; margin-bottom: 40px; margin-top: -30px;">شاهد جودة خدماتنا في صيانة الأجهزة المنزلية</p>
+        
+        <div class="gallery-grid">
+            <!-- الصورة 1 -->
+            <div class="gallery-item" data-aos="zoom-in">
+                <img src="images/gallery1.jpeg" alt="صيانة غسالات">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <!-- الصورة 2 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="images/gallery2.jpeg" alt="صيانة مكيفات">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <!-- الصورة 3 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="images/gallery3.jpeg" alt="صيانة ثلاجات">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <!-- الصورة 4 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                <img src="images/gallery4.jpeg" alt="فريق العمل">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <!-- الصورة 5 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                <img src="images/gallery5.jpeg" alt="المحل من الخارج">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <!-- الصورة 6 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                <img src="images/gallery6.jpeg" alt="قطع غيار أصلية">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+                 <!-- الصورة 6 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                <img src="images/gallery7.jpeg" alt="قطع غيار أصلية">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+                 <!-- الصورة 6 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                <img src="images/gallery8.jpeg" alt="قطع غيار أصلية">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+                 <!-- الصورة 6 -->
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                <img src="images/gallery9.jpeg" alt="قطع غيار أصلية">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- نافذة عرض الصورة (Lightbox) - تظهر عند الضغط على صورة -->
+<div id="image-viewer">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="full-image">
+</div>
 <!-- قسم آراء العملاء -->
 <section class="testimonials">
     <div class="container">

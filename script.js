@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. تهيئة مكتبة AOS للأنيميشن
     // ضبط once: false يجعل الأنيميشن يتكرر في كل مرة تعمل سكرول للأعلى والأسفل
    AOS.init({
-        duration: 800,      // سرعة الأنيميشن (جعلناه أسرع قليلاً من 1000)
+        duration: 500,      // سرعة الأنيميشن (جعلناه أسرع قليلاً من 1000)
         once: false,        
         mirror: true,       // يكرر الحركة عند الصعود للأعلى
         offset: 30,         // تقليل المسافة (كانت 100)، الآن سيظهر العنصر بمجرد دخوله 50 بكسل فقط
@@ -87,4 +87,28 @@ if(menuBtn) {
         icon.classList.toggle('fa-times');
     });
 }
+});
+// ميزة تكبير الصور في المعرض
+const galleryItems = document.querySelectorAll('.gallery-item');
+const imageViewer = document.getElementById('image-viewer');
+const fullImage = document.getElementById('full-image');
+const closeBtn = document.querySelector('.close');
+
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        fullImage.src = img.src;
+        imageViewer.style.display = 'block';
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    imageViewer.style.display = 'none';
+});
+
+// إغلاق النافذة عند الضغط في أي مكان خارج الصورة
+imageViewer.addEventListener('click', (e) => {
+    if (e.target !== fullImage) {
+        imageViewer.style.display = 'none';
+    }
 });
