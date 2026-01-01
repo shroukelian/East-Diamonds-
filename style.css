@@ -7,6 +7,17 @@
     --text-light: #f4f4f4;
     --transition: all 0.3s ease-in-out;
 }
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* يمنع الحركة يميناً ويساراً نهائياً */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 * {
     margin: 0;
@@ -15,12 +26,7 @@
     font-family: 'Cairo', sans-serif;
 }
 
-body {
-    background-color: #fcfcfc;
-    color: var(--text-dark);
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+
 
 .container {
     max-width: 1200px;
@@ -101,13 +107,11 @@ body {
 .hero {
    position: relative;
     width: 100%;
-    /* 100dvh تضمن ملء الشاشة تماماً في المتصفحات الحديثة */
     min-height: 100dvh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* التدرج اللوني فوق الصورة لجعل النص واضحاً */
     background: linear-gradient(rgba(26, 34, 45, 0.75), rgba(26, 34, 45, 0.85)), 
                 url('images/hero.jpeg');
     background-size: cover;
@@ -115,7 +119,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: scroll; /* أفضل للأداء على الجوال */
     color: var(--white);
-    padding: 80px 20px; /* مساحة علوية للهيدر */
+    padding: 80px 20px;
 }
 .hero-content {
     width: 100%;
@@ -475,6 +479,34 @@ body {
     .gallery-item {
         height: 180px;
     }
+}
+/* 6. ميديا كويري خاصة للجوالات الصغيرة جداً */
+@media (max-width: 480px) {
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .hero-btns .btn {
+        width: 100%;
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* 7. منع تأثيرات AOS من كسر الشاشة */
+[data-aos] {
+    pointer-events: none;
+}
+.aos-animate {
+    pointer-events: auto;
+}
+/* حل مشكلة الحركات اللي بتيجي من الجنب وتسبب مساحة بيضاء */
+body.aos-all-hidden {
+    overflow-x: hidden !important;
 }
 /* footer */
 footer {
