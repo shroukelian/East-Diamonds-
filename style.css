@@ -353,8 +353,41 @@ footer a:hover {
 @media (max-width: 768px) {
     /* 1. جعل الهيدر مرن */
     .navbar {
-        background: var(--secondary) !important; /* خلفية ثابتة للهيدر في الموبايل */
-        padding: 10px 0;
+        position: fixed; /* تثبيت الهيدر في الأعلى */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #1a222d !important; /* نفس لون الخلفية الكحلي */
+        padding: 15px 0 !important; /* إضافة مسافة من فوق ومن تحت */
+        z-index: 9999; /* لضمان ظهوره فوق كل شيء */
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+ .nav-container {
+        display: flex !important;
+        justify-content: space-between !important; /* اللوجو في طرف والمنيو في طرف */
+        align-items: center !important; /* محاذاة العناصر عمودياً في النص */
+        padding: 0 20px !important;
+    }
+ .logo {
+        margin: 0 !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 35px !important; /* تصغير اللوجو ليناسب الموبايل */
+    }
+
+    .logo span {
+        font-size: 1.1rem !important;
+        margin-right: 8px;
+    }
+
+    /* ضبط أيقونة المنيو (الثلاث شرطات) */
+    .menu-btn {
+        display: block !important;
+        font-size: 1.5rem;
+        color: #fff;
     }
 
     /* 2. إصلاح القائمة (المنيو) لتصبح ملء الشاشة */
